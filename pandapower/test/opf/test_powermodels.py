@@ -27,7 +27,6 @@ except ImportError:
     UnsupportedPythonError = Exception
 try:
     from julia import Main
-
     julia_installed = True
 except (ImportError, RuntimeError, UnsupportedPythonError) as e:
     julia_installed = False
@@ -557,5 +556,23 @@ def test_pm_to_pp_conversion(simple_opf_test_net):
 
 
 if __name__ == '__main__':
-    test_pwl()
-    # pytest.main([__file__])
+
+    pytest.main([__file__])
+    # net = net_3w_trafo_opf()
+    # test_compare_pwl_and_poly(net)
+    # test_pwl()
+    # test_without_ext_grid()
+    # test_multiple_ext_grids()
+    # test_voltage_angles()
+    # test_pm_tnep()
+    # test_storage_opt() #failing
+    # test_ots_opt() #failing
+    # test_pm_ac_powerflow_simple()
+    # test_pm_dc_powerflow_simple()
+    # test_pm_ac_powerflow_shunt()
+    # test_pm_dc_powerflow_shunt()
+    # test_pm_ac_powerflow_tap()
+    # test_pm_dc_powerflow_tap()
+    # test_pp_to_pm_conversion(net)
+    # net2 = simple_opf_test_net()
+    # test_pm_to_pp_conversion(net2)
